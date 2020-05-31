@@ -104,11 +104,11 @@ export default {
   },
   methods: {
     loadCache () {
-      this.$refs.markdownText.innerText = utils.fetchData('remango-blog')
+      this.$refs.markdownText.innerText = utils.fetchData('vue-blog')
     },
     articleCache () {
       this.intervalId = setInterval(() => {
-        utils.saveData('remango-blog', this.$refs.markdownText.innerText)
+        utils.saveData('vue-blog', this.$refs.markdownText.innerText)
       }, 5000)
     },
     initMarkdown () {
@@ -183,7 +183,7 @@ export default {
             this.articleTitle = ''
             this.resetForm('articleInfoForm')
             this.$refs.markdownText.innerText = ''
-            utils.saveData('remango-blog', '')
+            utils.saveData('vue-blog', '')
             this.dialogVisible = false
             this.$alert('已发布，前往首页！', '提示', {
               confirmButtonText: '确定',
